@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+{% block head_title%}
+Change pass
+{%endblock%}
+
+{%block content%}
+<form style="padding: 70px; border-radius: 8px;" class="w-2/3 m-auto bg-white my-12" method="post" action="">
+    <h3 class="text-2xl font-mono font-bold text-center mb-5">Change your Password</h3>
+    {% load crispy_forms_tags %}
+    {% csrf_token %}
+    {{form | crispy}}
+
+    <button
+        class="mx-2 inline-block font-medium text-sm px-4 py-2 leading-none bg-blue-900 rounded text-white border-white hover:border-transparent hover:text-dark hover:bg-red-700 mt-4 lg:mt-0"
+        type="submit">Submit</button>
+</form>
+{%endblock%}
